@@ -36,12 +36,39 @@ vagrant box list
 
 ```bash
 vagrant box update
+vagrant box prune
 ```
 
-## Run VM
+## Start VM
 
 ```bash
 vagrant up
+```
+
+## Stop VM
+
+Halting the virtual machine by calling vagrant halt will gracefully shut down
+the guest operating system and power down the guest machine.
+You can use vagrant up when you are ready to boot it again.
+The benefit of this method is that it will cleanly shut down your machine,
+preserving the contents of disk, and allowing it to be cleanly started again.
+The downside is that it'll take some extra time to start from a cold boot,
+and the guest machine still consumes disk space.
+
+```bash
+vagrant halt
+```
+
+Suspending the virtual machine by calling vagrant suspend will save the current
+running state of the machine and stop it. When you are ready to begin working
+again, just run vagrant up, and it will be resumed from where you left off.
+The main benefit of this method is that it is super fast, usually taking
+only 5 to 10 seconds to stop and start your work. The downside is that
+the virtual machine still eats up your disk space, and requires even more disk
+space to store all the state of the virtual machine RAM on disk.
+
+```bash
+vagrant suspend
 ```
 
 ## Destroy VM
@@ -55,6 +82,7 @@ vagrant destroy -f
 ```bash
 vagrant status
 vagrant global-status
+vagrant global-status --prune
 ```
 
 [src]: https://github.com/akman/vagrant-boilerplate

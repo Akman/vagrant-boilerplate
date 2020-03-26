@@ -11,7 +11,7 @@ function pkg-present {
   dpkg-query -s "$@" >/dev/null
   if [ $? -ne 0 ]
     then
-    apt install -y "$@"
+    apt-get install -y "$@"
     else
     echo -e "Package '$@' already installed"
   fi
@@ -121,12 +121,15 @@ if [ ! -f "/root/.config/mc/panels.ini" ]
   echo -e "${MC_PANELS}" > "/root/.config/mc/panels.ini"
 fi
 
-apt -y update
+apt-get -y update
 
 ppa-present ansible/ansible
 
 apt-get -y update
 
+# pkg-present git
+# pkg-present dnsutils
+# pkg-present curl
 pkg-present aptitude
 pkg-present build-essential
 pkg-present software-properties-common
@@ -134,8 +137,5 @@ pkg-present python-minimal
 pkg-present python-openssl
 pkg-present python-apt
 pkg-present ansible
-pkg-present git
-pkg-present dnsutils
-pkg-present curl
 pkg-present tree
 pkg-present mc

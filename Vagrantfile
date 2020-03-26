@@ -29,8 +29,10 @@ Vagrant.configure("2") do |config|
   #private_key_path = "#{Dir.home()}/.ssh/id_rsa"
   public_key_path = "#{Dir.home()}/.ssh/id_rsa.pub"
 
-  vm_box_name = "ubuntu/focal64"
-  vm_box_description = "Ubuntu 20.04 LTS x64 Focal Fossa"
+  # vm_box_name = "ubuntu/focal64"
+  # vm_box_description = "Ubuntu 20.04 LTS x64 Focal"
+  vm_box_name = "ubuntu/bionic64"
+  vm_box_description = "Ubuntu 18.04 LTS x64 Bionic"
 
   # This sets the username that Vagrant will SSH as by default.
   # Providers are free to override this if they detect a more appropriate user.
