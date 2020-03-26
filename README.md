@@ -1,5 +1,7 @@
 # Vagrant boilerplate
 
+[![License](https://img.shields.io/github/license/akman/vagrant-boilerplate.svg)](https://github.com/akman/vagrant-boilerplate/blob/master/LICENSE)
+
 This project aims to cover best practices for usage Vagrant as a whole.
 
 [The source for this project is available here][src]
