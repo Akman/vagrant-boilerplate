@@ -1,0 +1,18 @@
+# ignore idea settings
+.idea
+*.iml
+
+# ignore vscode settings
+.vscode
+
+# ignore eclipse settings
+.settings
+.project
+.classpath
+
+# general things to ignore
+.vagrant
+
+# ignore logs
+log
+*.log
